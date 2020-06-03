@@ -1,0 +1,56 @@
+{
+  "name": "sudokusocket",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "bootstrap": "^4.3.1",
+    "customize-cra": "^1.0.0",
+    "history": "4.10.1",
+    "jquery": "^3.4.1",
+    "merge": "1.2.1",
+    "mobx": "^5.15.4",
+    "mobx-react": "^6.2.2",
+    "mobx-react-router": "^4.1.0",
+    "popper.js": "^1.16.0",
+    "prop-types": "^15.7.2",
+    "react": "16.11.0",
+    "react-app-rewired": "^2.1.6",
+    "react-dom": "16.11.0",
+    "react-router": "5.1.2",
+    "react-router-dom": "5.1.2",
+    "react-scripts": "^3.2.0",
+    "reactstrap": "8.1.1",
+    "svgo": "1.3.0"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.10.1",
+    "@babel/plugin-proposal-decorators": "^7.10.1",
+    "@types/jest": "24.0.19",
+    "autoprefixer": "^9.8.0",
+    "babel-eslint": "^10.0.2",
+    "babel-jest": "^24.8.0",
+    "cross-env": "6.0.3",
+    "eslint": "^6.5.1",
+    "eslint-config-airbnb": "^17.1.1",
+    "eslint-plugin-import": "2.18.2",
+    "eslint-plugin-jsx-a11y": "6.2.3",
+    "eslint-plugin-react": "7.16.0",
+    "postcss-cli": "^7.1.1",
+    "tailwindcss": "^1.4.6"
+  },
+  "scripts": {
+    "start": "npm run build:css && react-app-rewired start",
+    "build": "npm run build:css && react-app-rewired build",
+    "test": "cross-env CI=true react-app-rewired test --env=jsdom",
+    "jest": "react-app-rewired test --env=jsdom",
+    "eject": "react-app-rewired eject",
+    "lint": "eslint src/**/*.js",
+    "build:css": "postcss src/styles/tailwind.css -o src/styles/main.css"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}

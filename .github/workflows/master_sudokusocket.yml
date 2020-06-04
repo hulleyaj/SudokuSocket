@@ -33,4 +33,4 @@ jobs:
         app-name: 'sudokusocket'
         slot-name: 'production'
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_0d8c5391cddf4ec9873d0ffac94acee9 }}
-        package: ./ClientApp/build
+        package: .

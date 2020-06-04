@@ -11,6 +11,7 @@ const ServerTest = observer(() => {
     status
   } = serverTest;
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => reset, []);
 
   return <React.Fragment>

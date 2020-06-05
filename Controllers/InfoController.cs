@@ -19,7 +19,6 @@ namespace SudokuSocket.Controllers
         [HttpGet("health")]
         public object Health()
         {
-            Thread.Sleep(1000);
             return new { status = "Server is running" };
         }
     }

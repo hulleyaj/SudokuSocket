@@ -3,13 +3,13 @@ import { MobXProviderContext, observer } from 'mobx-react';
 import { Button, Spinner } from 'reactstrap';
 
 const ServerTest = observer(() => {
-  const { serverTest } = React.useContext(MobXProviderContext);
+  const { serverTestStore } = React.useContext(MobXProviderContext);
   const {
     loading,
     pingServer,
     reset,
     status
-  } = serverTest;
+  } = serverTestStore;
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => reset, []);

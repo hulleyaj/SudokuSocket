@@ -1,4 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.css';
+import './styles/main.css';
 
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
@@ -8,6 +9,7 @@ import { RouterStore, syncHistoryWithStore } from 'mobx-react-router';
 import { Router } from 'react-router';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
+import BoardStore from './stores/BoardStore';
 import ServerTestStore from './stores/ServerTestStore';
 
 // Create browser history to use in the mobx store
@@ -16,11 +18,13 @@ const browserHistory = createBrowserHistory({ basename: baseUrl });
 const routingStore = new RouterStore();
 const history = syncHistoryWithStore(browserHistory, routingStore);
 
+const boardStore = new BoardStore();
 const serverTestStore = new ServerTestStore();
 
 const stores = {
+  boardStore,
   routing: routingStore,
-  serverTest: serverTestStore
+  serverTestStore
 };
 
 ReactDOM.render(

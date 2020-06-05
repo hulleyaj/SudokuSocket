@@ -1,0 +1,8 @@
+.board {
+  height: calc(100vw/2);
+  width: calc(100vw/2);
+  min-width: 300px;
+  min-height: 300px;
+  max-width: 600px;
+  max-height: 600px;
+}

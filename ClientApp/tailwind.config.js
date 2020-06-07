@@ -274,6 +274,8 @@ module.exports = {
     },
     height: theme => ({
       auto: 'auto',
+      '331': '331px',
+      '596': '596px',
       ...theme('spacing'),
       full: '100%',
       screen: '100vh',
@@ -425,6 +427,8 @@ module.exports = {
       '9/12': '75%',
       '10/12': '83.333333%',
       '11/12': '91.666667%',
+      '331': '331px',
+      '596': '596px',
       full: '100%',
       screen: '100vw',
     }),
@@ -723,5 +727,7 @@ module.exports = {
     transitionDelay: ['responsive'],
   },
   corePlugins: {},
-  plugins: [],
+  plugins: [
+    require('tailwind-caret-color')(),
+  ],
 }

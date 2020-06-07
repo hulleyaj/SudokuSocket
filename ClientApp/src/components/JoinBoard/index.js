@@ -9,13 +9,12 @@ import {
 
 const JoinBoard = () => {
   const { boardStore } = React.useContext(MobXProviderContext);
-  const { createBoard, joinBoard, sendNumber } = boardStore;
+  const { createBoard, joinBoard } = boardStore;
 
   const [text, setText] = useState('');
 
   return <div>
     <Button onClick={ createBoard }>Create Board</Button>
-    <Button onClick={ sendNumber }>Send Number</Button>
     <p>or</p>
     <div>
       <Input onChange={ e => setText(e.target.value) } />

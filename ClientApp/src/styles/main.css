@@ -6237,6 +6237,14 @@ video {
   height: 16rem;
 }
 
+.h-331 {
+  height: 331px;
+}
+
+.h-596 {
+  height: 596px;
+}
+
 .h-auto {
   height: auto;
 }
@@ -6251,10 +6259,6 @@ video {
 
 .h-screen {
   height: 100vh;
-}
-
-.h-1\/2 {
-  height: 50%;
 }
 
 .text-xs {
@@ -14115,6 +14119,14 @@ video {
   width: 16rem;
 }
 
+.w-331 {
+  width: 331px;
+}
+
+.w-596 {
+  width: 596px;
+}
+
 .w-auto {
   width: auto;
 }
@@ -16702,6 +16714,22 @@ video {
 
 .delay-1000 {
   transition-delay: 1000ms;
+}
+
+.caret-transparent {
+  caret-color: transparent;
+}
+
+.caret-current {
+  caret-color: currentColor;
+}
+
+.caret-black {
+  caret-color: #000;
+}
+
+.caret-white {
+  caret-color: #fff;
 }
 
 @media (min-width: 640px) {
@@ -22327,6 +22355,14 @@ video {
     height: 16rem;
   }
 
+  .sm\:h-331 {
+    height: 331px;
+  }
+
+  .sm\:h-596 {
+    height: 596px;
+  }
+
   .sm\:h-auto {
     height: auto;
   }
@@ -22341,10 +22377,6 @@ video {
 
   .sm\:h-screen {
     height: 100vh;
-  }
-
-  .sm\:h-1\/2 {
-    height: 50%;
   }
 
   .sm\:text-xs {
@@ -30203,6 +30235,14 @@ video {
 
   .sm\:w-64 {
     width: 16rem;
+  }
+
+  .sm\:w-331 {
+    width: 331px;
+  }
+
+  .sm\:w-596 {
+    width: 596px;
   }
 
   .sm\:w-auto {
@@ -38418,6 +38458,14 @@ video {
     height: 16rem;
   }
 
+  .md\:h-331 {
+    height: 331px;
+  }
+
+  .md\:h-596 {
+    height: 596px;
+  }
+
   .md\:h-auto {
     height: auto;
   }
@@ -38432,10 +38480,6 @@ video {
 
   .md\:h-screen {
     height: 100vh;
-  }
-
-  .md\:h-1\/2 {
-    height: 50%;
   }
 
   .md\:text-xs {
@@ -46294,6 +46338,14 @@ video {
 
   .md\:w-64 {
     width: 16rem;
+  }
+
+  .md\:w-331 {
+    width: 331px;
+  }
+
+  .md\:w-596 {
+    width: 596px;
   }
 
   .md\:w-auto {
@@ -54509,6 +54561,14 @@ video {
     height: 16rem;
   }
 
+  .lg\:h-331 {
+    height: 331px;
+  }
+
+  .lg\:h-596 {
+    height: 596px;
+  }
+
   .lg\:h-auto {
     height: auto;
   }
@@ -54523,10 +54583,6 @@ video {
 
   .lg\:h-screen {
     height: 100vh;
-  }
-
-  .lg\:h-1\/2 {
-    height: 50%;
   }
 
   .lg\:text-xs {
@@ -62385,6 +62441,14 @@ video {
 
   .lg\:w-64 {
     width: 16rem;
+  }
+
+  .lg\:w-331 {
+    width: 331px;
+  }
+
+  .lg\:w-596 {
+    width: 596px;
   }
 
   .lg\:w-auto {
@@ -70600,6 +70664,14 @@ video {
     height: 16rem;
   }
 
+  .xl\:h-331 {
+    height: 331px;
+  }
+
+  .xl\:h-596 {
+    height: 596px;
+  }
+
   .xl\:h-auto {
     height: auto;
   }
@@ -70614,10 +70686,6 @@ video {
 
   .xl\:h-screen {
     height: 100vh;
-  }
-
-  .xl\:h-1\/2 {
-    height: 50%;
   }
 
   .xl\:text-xs {
@@ -78476,6 +78544,14 @@ video {
 
   .xl\:w-64 {
     width: 16rem;
+  }
+
+  .xl\:w-331 {
+    width: 331px;
+  }
+
+  .xl\:w-596 {
+    width: 596px;
   }
 
   .xl\:w-auto {

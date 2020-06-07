@@ -1,6 +1,8 @@
 import { action, observable } from 'mobx';
 import * as signalR from '@microsoft/signalr';
 
+// board indexes are like reading a book
+// [0-8 big squares][0-8 small squares per big square]
 export default class BoardStore {
   connection = null;
 
@@ -50,10 +52,15 @@ export default class BoardStore {
   }
 
   @action.bound
-  sendNumber() {
-    this.connection
-      .invoke('SendNumber', 'lol', 5, this.currentGroup)
-      .catch(e => console.log('error = ', e));
+  setNumber(val, outerIndex, innerIndex) {
+    // eslint-disable-next-line no-restricted-globals
+    if (isNaN(val)) { return; }
+
+    this.board[outerIndex][innerIndex] = val;
+    console.log(`setting [${outerIndex}][${innerIndex}] to ${val}`);
+    // this.connection
+    //   .invoke('SendNumber', 'lol', 5, this.currentGroup)
+    //   .catch(e => console.log('error = ', e));
   }
 
   @action.bound

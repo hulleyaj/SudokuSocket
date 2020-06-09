@@ -2,9 +2,7 @@ import React, { useState } from 'react';
 import { MobXProviderContext } from 'mobx-react';
 import {
   Button,
-  Input,
-  InputGroup,
-  Spinner
+  Input
 } from 'reactstrap';
 
 const JoinBoard = () => {

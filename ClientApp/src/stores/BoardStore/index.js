@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import { action, observable } from 'mobx';
 import * as signalR from '@microsoft/signalr';
 

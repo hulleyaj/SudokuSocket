@@ -18,7 +18,8 @@
       "sourceType": "module"
   },
   "plugins": [
-      "react"
+      "react",
+      "react-hooks"
   ],
   "rules": {
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],

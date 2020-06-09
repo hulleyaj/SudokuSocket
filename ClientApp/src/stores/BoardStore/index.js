@@ -8,21 +8,24 @@ export default class BoardStore {
 
   @observable board = null;
 
+  @observable focusedSquare = null;
+
   @observable currentGroup = null;
 
   @observable groupStatus = null;
 
   constructor() {
-    this.board = new Array(9).fill(new Array(9));
-    this.board[0] = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+    this.board = new Array(9).fill(new Array(9).fill({ val: undefined, locked: undefined }));
+    this.board[0][0] = { val: 4, locked: false };
+    this.board[0][1] = { val: 5, locked: true };
 
     this.connection = new signalR.HubConnectionBuilder()
       .withUrl('/boardHub')
       .configureLogging(signalR.LogLevel.Information)
       .build();
 
-    this.connection.on('ReceiveNumber', (user, number) => {
-      this.receiveNumber(number);
+    this.connection.on('ReceiveNumber', (...props) => {
+      this.receiveNumber(...props);
     });
 
     this.connection.on('UpdateGroupStatus', status => {
@@ -37,7 +40,7 @@ export default class BoardStore {
 
   @action.bound
   async joinBoard(name) {
-    //this is too early
+    // this is too early
     this.currentGroup = name;
 
     try {
@@ -52,20 +55,29 @@ export default class BoardStore {
   }
 
   @action.bound
-  setNumber(val, outerIndex, innerIndex) {
-    // eslint-disable-next-line no-restricted-globals
-    if (isNaN(val)) { return; }
-
-    this.board[outerIndex][innerIndex] = val;
-    console.log(`setting [${outerIndex}][${innerIndex}] to ${val}`);
-    // this.connection
-    //   .invoke('SendNumber', 'lol', 5, this.currentGroup)
-    //   .catch(e => console.log('error = ', e));
+  setFocusedSquare(outerIndex, innerIndex) {
+    this.focusedSquare = { outerIndex, innerIndex };
   }
 
   @action.bound
-  receiveNumber(number) {
-    console.log('number received = ', number);
+  setNumber(val) {
+    // eslint-disable-next-line no-restricted-globals
+    if (isNaN(val)) { return; }
+
+    const { outerIndex, innerIndex } = this.focusedSquare;
+
+    if (!this.board[outerIndex][innerIndex].locked) {
+      this.board[outerIndex][innerIndex].val = val;
+    }
+
+    this.connection
+      .invoke('SendNumber', Number(val), outerIndex, innerIndex, this.currentGroup)
+      .catch(e => console.log('error = ', e));
+  }
+
+  @action.bound
+  receiveNumber(val, outerIndex, innerIndex) {
+    this.board[outerIndex][innerIndex].val = val;
   }
 
   // @action.bound

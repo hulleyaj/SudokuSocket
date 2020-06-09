@@ -1,32 +1,33 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
+import { observer } from 'mobx-react';
 
-const onKeyPress = ({
-  key,
-  innerIndex,
-  outerIndex,
+const className = (focused, locked) =>
+  `flex justify-center items-center 
+  w-full h-full 
+  caret-transparent cursor-default
+  text-3xl md:text-5xl 
+  ${focused && 'border-2 border-red-500 bg-opacity-25'} 
+  ${locked && 'bg-orange-200 bg-opacity-50'}`;
+
+const InputSquare = observer(({
+  square,
+  focused,
+  setFocus,
   setNumber
 }) => {
-  setNumber(key, outerIndex, innerIndex);
-};
-
-const InputSquare = ({
-  val,
-  ...props
-}) => {
-  const [focused, setFocus] = useState(false);
+  const { val, locked } = square;
 
   return <div
-    className={ `w-full h-full caret-transparent text-center text-3xl md:text-5xl ${focused && 'border-2 border-red-500'}` }
+    className={ className(focused, locked) }
     role="textbox"
     tabIndex="0"
-    onFocus={ () => setFocus(true) }
-    onBlur={ () => setFocus(false) }
-    onKeyPress={ e => onKeyPress({ ...e, ...props }) }
+    onFocus={ () => !locked && setFocus() }
+    onKeyPress={ ({ key }) => !locked && setNumber(key) }
   >
     { val || '' }
   </div>;
-};
+});
 
 InputSquare.propTypes = {
   innerIndex: PropTypes.number,

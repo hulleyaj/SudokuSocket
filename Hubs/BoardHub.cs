@@ -12,22 +12,22 @@ namespace SudokuSocket.Hubs
         {
             await Groups.AddToGroupAsync(Context.ConnectionId, groupName);
 
-            bool isNewGroup = this.GroupsAndUsers.TryAdd(groupName, new List<string>() { Context.ConnectionId });
+            //bool isNewGroup = this.GroupsAndUsers.TryAdd(groupName, new List<string>() { Context.ConnectionId });
 
-            if (isNewGroup)
-            {
-                await Clients.Group(groupName).SendAsync("UpdateGroupStatus", "Created new group");
-            }
-            else
-            {
-                this.GroupsAndUsers[groupName].Add(Context.ConnectionId);
-                await Clients.Group(groupName).SendAsync("UpdateGroupStatus", $"Current users in group: { this.GroupsAndUsers[groupName].Count }");
-            }
+            //if (isNewGroup)
+            //{
+            //    await Clients.Group(groupName).SendAsync("UpdateGroupStatus", "Created new group");
+            //}
+            //else
+            //{
+            //    this.GroupsAndUsers[groupName].Add(Context.ConnectionId);
+            //    await Clients.Group(groupName).SendAsync("UpdateGroupStatus", $"Current users in group: { this.GroupsAndUsers[groupName].Count }");
+            //}
         }
 
-        public async Task SendNumber(string user, int number, string groupName)
+        public async Task SendNumber(int val, int outerIndex, int innerIndex, string groupName)
         {
-            await Clients.Group(groupName).SendAsync("ReceiveNumber", user, number);
+            await Clients.Group(groupName).SendAsync("ReceiveNumber", val, outerIndex, innerIndex);
         }
     }
 }

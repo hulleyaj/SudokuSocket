@@ -10,7 +10,7 @@
     "jquery": "^3.4.1",
     "lodash": "^4.17.15",
     "lodash.debounce": "^4.0.8",
-    "merge": "1.2.1",
+    "merge": "2.1.1",
     "mobx": "^5.15.4",
     "mobx-react": "^6.2.2",
     "mobx-react-router": "^4.1.0",
